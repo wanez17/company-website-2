@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;1,100&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100&display=swap');
 
+/*CSS Reset Rule*/
+/*=========================*/
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/*Declaring variables*/
-/*==========================*/
+/*Declaring color variables to use later in my code*/
+/*=====================================================*/
 
 :root{
   --BLUE: #65c9d4;
@@ -21,12 +24,9 @@ html{
     scroll-behavior: smooth;
 }
 
-
 body{
   font-family: 'Roboto', sans-serif;
 }
-
-
 
 
 /*Styling the nav*/
@@ -101,9 +101,7 @@ body{
 /*===========================*/
 /*End of nav styling*/
 
-#main{
 
-}
 
 /*Styling the home section*/
 /*===================================*/
@@ -116,6 +114,7 @@ body{
 
 .home-display{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   padding-top: 2rem;
@@ -128,7 +127,8 @@ body{
 
 .home-txt header{
   color: var(--WHITE);
-  font-size: 2.7rem;
+  font-size: 2.5rem;
+   padding-right: 0.5rem;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
@@ -145,6 +145,7 @@ body{
   padding: 10px;
   margin: 2rem;
   text-decoration: none;
+  text-align: center;
 }
 
 #home .home-txt a:hover{
@@ -159,7 +160,9 @@ body{
   text-align: center;
 }
 
-/*===============================================*/
+
+/*Styling the features section*/
+/*===============================*/
 
 #features{
   background-color: var(--WHITE);
@@ -194,6 +197,8 @@ body{
 }
 
 
+
+/*Styling the overview section*/
 /*===============================================*/
 
 #overview{
@@ -201,6 +206,7 @@ body{
   padding-top: 2rem;
 }
 
+/*This is the div in which the <iframe></iframe> video was nested*/
 #overview .iframe-div{
   display: flex;
   justify-content: center;
@@ -209,6 +215,8 @@ body{
 }
 
 
+
+/*Styling the section meant for the pricing*/
 /*===============================================*/
 
 #pricing{
@@ -251,16 +259,16 @@ body{
 }
 
 .pricing-div{
-  display: flex;
+  display: flex; 
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
 .flex-div{
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: 0.5rem 1rem;
   background-color: var(--GRAY);
-  width: 14rem;
+  min-width: 14rem;
   text-align: center;
   padding-bottom: 2rem;
 }
@@ -279,6 +287,7 @@ body{
   background-color: var(--DARK);
 }
 
+/*The three classes below was created in order to help assign colors to the .pricing-name and the buttons in the pricing section*/
 .yellow{
     background-color: #ffcc00;
 }
@@ -292,6 +301,8 @@ body{
 }
 
 
+
+/*Styling the team section*/
 /*===============================================*/
 
 #our-team{
@@ -305,13 +316,16 @@ body{
   color: var(--WHITE);
 }
 
+/*This is where all the team members are nested*/
 #our-team .team-members{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 #our-team .member{
+  margin: 0.5rem;
   margin-right: 2rem;
   text-align: center;
 }
@@ -332,6 +346,8 @@ body{
 }
 
 
+
+/*Styling the contact section & form*/
 /*=======================================*/
 #contact-us{
   background-color: var(--DARK);
@@ -346,6 +362,7 @@ body{
   font: inherit;
 }
 
+/*This selects the input with type of name & email respectively and apply the styles */
 input[type=name], input[type=email]{
   width: 49.6%;
   font-size: 1.1rem;
@@ -354,6 +371,7 @@ input[type=name], input[type=email]{
   border: none;
 }
 
+/*This applies the styling to the textarea*/
 textarea{
   width: 99.6%;
   font-size: 1.1rem;
@@ -365,6 +383,7 @@ textarea{
   border: none;
 }
 
+/*This applies the styling to the input whose type is submit*/
 input[type=submit]{
   width: 100%;
   font-size: 1rem;
@@ -376,6 +395,9 @@ input[type=submit]{
   border: none;
 }
 
+
+
+/*Styling the footer section*/
 /*===============================*/
 
 #footer{
@@ -385,8 +407,10 @@ input[type=submit]{
   justify-content: space-evenly;
   padding: 1rem;
   text-transform: uppercase;
+  font-size: 0.8rem;
 }
 
+/*Styles the anchor tag in the footer*/
 #footer a{
   color: var(--DARK);
   font-weight: bold;
@@ -396,3 +420,141 @@ input[type=submit]{
 #footer a:hover{
 text-decoration: underline;
 }
+
+
+
+/*adding media queries to make the website responsive */
+/*========================================================*/
+
+@media screen and  (max-width:  830px){
+  .home-display{
+    flex-wrap: wrap;
+  }
+
+  .home-txt{
+    margin-top: 0.6rem;
+  }
+} 
+
+
+@media screen and  (max-width : 655px) {
+
+  input[type=submit]{
+  padding: 0.9rem;
+  font-size: 1.1rem;
+}
+
+
+  input[type=name], input[type=email]{
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.9rem;
+}
+
+
+input[type=name]{
+  margin-bottom: 0.7rem;
+}
+
+
+textarea{
+  margin-top: 3px;
+  margin-bottom: 6px;
+}
+
+
+.home-txt header{
+  margin-top: 20px;
+}
+
+
+.flex-div {
+    margin: 0.8rem 1rem;
+    min-width: 20rem;
+}
+
+
+#contact-us form   {
+  width: auto;
+}
+
+
+#footer{
+  text-align: center;
+}
+
+
+.copyright-hide{
+  display: none;
+}
+
+}
+
+
+@media screen and (max-width: 375px){
+  .home-txt header {
+    font-size: 1.8rem;
+    font-weight: bolder;
+  }
+
+
+  .flex-div {
+    margin: 0.8rem 0;
+    min-width: 18rem;
+}
+
+
+.home-img img {
+    max-width: 18rem;
+    height: auto;
+}
+
+
+#home #home-link{
+  display: block;
+}
+
+}
+
+
+
+
+@media screen and (min-width: 860px){
+  .home-display{
+    flex-wrap: nowrap;
+  }
+}
+
+
+/*This media query is applied to make the website responsive in landscape mode (i.e. when the device is rotated)*/
+@media screen and (max-height: 380px){
+
+  .home-img img {
+    max-width: 15rem;
+    height: auto;
+}
+
+
+.home-txt header {
+    font-size: 1.5rem;
+}
+
+
+.home-display{
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.home-txt p {
+    margin: 0.8rem;
+}
+
+
+#home #home-link{
+  padding: 7px 5px;
+}
+
+}
+
